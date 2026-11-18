@@ -142,6 +142,7 @@ public class PhotoLibraryPlugin: CAPPlugin, CAPBridgedPlugin {
                 let options = try PhotoLibraryPickOptions(from: call)
                 var configuration = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
                 configuration.selectionLimit = options.selectionLimit
+                configuration.preferredAssetRepresentationMode = .current
                 var filters: [PHPickerFilter] = []
                 if options.includeImages {
                     filters.append(.images)
