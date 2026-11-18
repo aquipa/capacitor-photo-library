@@ -156,6 +156,7 @@ public class PhotoLibraryPlugin: CAPPlugin, CAPBridgedPlugin {
 
                 let picker = PHPickerViewController(configuration: configuration)
                 picker.delegate = self
+                picker.modalPresentationStyle = .fullScreen
 
                 guard let presenter = self.bridge?.viewController else {
                     call.reject("Unable to access view controller to present picker")
